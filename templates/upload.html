@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <form method="POST" action="/send" enctype="multipart/form-data">
+        <h2>📧 Email Sender with Excel</h2>
+
+        <div class="input-group">
+            <input type="email" name="sender_email" id="sender_email" required>
+            <label for="sender_email">Your Email</label>
+        </div>
+
+        <div class="input-group">
+            <input type="password" name="password" id="password" required>
+            <label for="password">Your App Password</label>
+        </div>
+
+        <div class="input-group">
+            <input type="text" name="subject" id="subject" required>
+            <label for="subject">Email Subject</label>
+        </div>
+
+        <div class="file-upload">
+            <label for="excel_file">Upload Excel File (.xlsx)</label>
+            <input type="file" name="excel_file" id="excel_file" accept=".xlsx" required>
+        </div>
+
+        <button type="submit">Send Emails</button>
+    </form>
+</body>
+</html>

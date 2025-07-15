@@ -1,0 +1,16 @@
+<!-- templates/status.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Status</title>
+</head>
+<body>
+    <h2>📨 Email Sending Report</h2>
+    <ul>
+        {% for email, status in results %}
+            <li>{{ email }} — {{ status }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">← Go Back</a>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/* === Base Styles === */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f8;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* === Floating Label Group === */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 14px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    background-color: transparent;
+}
+
+.input-group label {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    color: #999;
+    background-color: white;
+    padding: 0 5px;
+    transition: 0.2s ease all;
+    pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown):valid + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #2e86de;
+}
+
+/* === File Upload Section === */
+.file-upload {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.file-upload label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.file-upload input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 14px;
+}
+
+/* === Button === */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #35ea3e;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2ede5a;
+}
+
+/* === Media Queries for Responsiveness === */
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 10px;
+    }
+}
