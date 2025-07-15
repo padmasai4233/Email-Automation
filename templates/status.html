@@ -2,15 +2,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Status</title>
+    <title>Email Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #35ea3e;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 90%;
+            max-width: 700px;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        th {
+            background-color: #35ea3e;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            background-color: #35ea3e;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #2ede5a;
+        }
+    </style>
 </head>
 <body>
     <h2>📨 Email Sending Report</h2>
-    <ul>
+
+    <table>
+        <tr>
+            <th>Recipient</th>
+            <th>Status</th>
+        </tr>
         {% for email, status in results %}
-            <li>{{ email }} — {{ status }}</li>
+        <tr>
+            <td>{{ email if email else "❓ Missing Email" }}</td>
+            <td>{{ status }}</td>
+        </tr>
         {% endfor %}
-    </ul>
-    <a href="/">← Go Back</a>
+    </table>
+
+    <a href="/" class="back-btn">← Go Back</a>
 </body>
 </html>

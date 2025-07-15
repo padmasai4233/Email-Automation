@@ -27,7 +27,6 @@ def send_emails():
 
         # ✅ Skip invalid or blank rows
         if not name or not receiver_email or not message_body:
-            status_list.append((receiver_email if receiver_email else '❓ Missing Email', '❌ Skipped: Missing fields'))
             continue
 
         # Compose email
